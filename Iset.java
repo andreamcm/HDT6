@@ -11,10 +11,10 @@ public interface Iset<E> {
 	public boolean Agregar(E desa);
 	//Agrega un elemento a la estructura
 	
-	public boolean contiene(E desarrolador);
+	public boolean contiene(E desarrollador);
 	//Regresa true si la estructura contiene el elemento especificado
 	
-	public boolean contieneTodos(Set valores);
+	public boolean contieneTodos(Set<Desarrollador> valores);
 	//Regresa true si la estructura cintiene todos los elementos especificados en la colección
 	
 	public boolean quitar(Object o);

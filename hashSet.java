@@ -1,4 +1,4 @@
-//Importamos Set de las clases de java y HashSet una implementación.
+//Importes
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,8 +15,7 @@ public class hashSet implements Iset<Desarrollador> {
 	 * Atributos de la clase hashSet
 	 */
 	
-	Set<Desarrollador> desarrolladores;
-	Set valores;
+	private HashSet<Desarrollador> desarrolladores;
 	
 	/**
 	 * Constructor de la clase hashSet
@@ -24,9 +23,11 @@ public class hashSet implements Iset<Desarrollador> {
 	public hashSet(){
 		desarrolladores = new HashSet<Desarrollador>();
 	}
+
 	
-	public void setValores (Set val){
-		this.valores = val;
+	
+	public Set<Desarrollador> getDesarroladores(){
+		return desarrolladores;
 	}
 
 
@@ -39,15 +40,15 @@ public class hashSet implements Iset<Desarrollador> {
 	}
 
 	@Override
-	public boolean contiene(Desarrollador desarrolador) {
-		if(desarrolladores.contains(desarrolador)==true)
+	public boolean contiene(Desarrollador desarrollador) {
+		if(desarrolladores.contains(desarrollador)==true)
 			return true;
 		else
 			return false;
 	}
 
 	@Override
-	public boolean contieneTodos(Set valores) {
+	public boolean contieneTodos(Set<Desarrollador> valores) {
 		if (desarrolladores.containsAll(valores)==true)
 			return true;
 		else
