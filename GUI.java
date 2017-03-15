@@ -1,19 +1,19 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JTextField;
-import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import javax.swing.JCheckBox;
 import javax.swing.JLabel;
-import java.awt.GridLayout;
+import java.awt.Font;
+import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
-import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 
 public class GUI {
 
 	private JFrame frame;
-	private JTextField txtInstruccion;
-	private JTextField txtNombre;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -43,103 +43,113 @@ public class GUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 747);
+		frame.setBounds(100, 100, 600, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
-		txtInstruccion = new JTextField();
-		txtInstruccion.setBounds(0, 0, 434, 28);
-		txtInstruccion.setText("A continuacion inserte el nombres del desarrolador y elija en que plataforma trabaja");
-		txtInstruccion.setEditable(false);
-		frame.getContentPane().add(txtInstruccion);
-		txtInstruccion.setColumns(10);
-		
-		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setBounds(10, 53, 67, 28);
-		frame.getContentPane().add(lblNombre);
-		
-		txtNombre = new JTextField();
-		txtNombre.setBounds(56, 57, 86, 20);
-		frame.getContentPane().add(txtNombre);
-		txtNombre.setColumns(10);
-		
-		JLabel lblPlataforma = new JLabel("Plataforma");
-		lblPlataforma.setBounds(10, 92, 78, 14);
-		frame.getContentPane().add(lblPlataforma);
-		
-		JRadioButton rdbtnJava = new JRadioButton("Java");
-		rdbtnJava.setBounds(20, 113, 109, 23);
-		frame.getContentPane().add(rdbtnJava);
-		
-		JRadioButton rdbtnAndroid = new JRadioButton("Android");
-		rdbtnAndroid.setBounds(20, 139, 89, 23);
-		frame.getContentPane().add(rdbtnAndroid);
-		
-		JRadioButton rdbtnIos = new JRadioButton("iOS");
-		rdbtnIos.setBounds(20, 167, 109, 23);
-		frame.getContentPane().add(rdbtnIos);
-		
-		JButton btnAgregar = new JButton("Agregar");
-		btnAgregar.setBounds(20, 227, 89, 23);
-		frame.getContentPane().add(btnAgregar);
-		
-		JLabel lblImplementacion = new JLabel("Implementacion");
-		lblImplementacion.setBounds(137, 92, 96, 14);
-		frame.getContentPane().add(lblImplementacion);
-		
-		JRadioButton rdbtnHashset = new JRadioButton("hashSet");
-		rdbtnHashset.setBounds(157, 113, 96, 23);
-		frame.getContentPane().add(rdbtnHashset);
-		
+
+		JPanel panel = new JPanel();
+		panel.setBounds(6, 6, 265, 366);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+
+		JCheckBox chckbxJava = new JCheckBox("Desarrollador Java");
+		chckbxJava.setBounds(41, 141, 201, 23);
+		panel.add(chckbxJava);
+
+		JCheckBox chckbxDesarrolladorIos = new JCheckBox("Desarrollador IOS");
+		chckbxDesarrolladorIos.setBounds(41, 166, 153, 23);
+		panel.add(chckbxDesarrolladorIos);
+
+		JCheckBox chckbxAndroid = new JCheckBox("Desarrollador Android");
+		chckbxAndroid.setBounds(41, 191, 182, 23);
+		panel.add(chckbxAndroid);
+
+		JLabel lblRegistro = new JLabel("Registro");
+		lblRegistro.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		lblRegistro.setBounds(88, 20, 118, 39);
+		panel.add(lblRegistro);
+
+		JLabel lblNombre = new JLabel("Nombre:");
+		lblNombre.setBounds(21, 60, 61, 16);
+		panel.add(lblNombre);
+
+		textField = new JTextField();
+		textField.setBounds(41, 80, 201, 26);
+		panel.add(textField);
+		textField.setColumns(10);
+
+		JRadioButton rdbtnHash = new JRadioButton("HashSet");
+		rdbtnHash.setBounds(41, 249, 141, 23);
+		panel.add(rdbtnHash);
+
 		JRadioButton rdbtnTreeset = new JRadioButton("TreeSet");
-		rdbtnTreeset.setBounds(157, 139, 96, 23);
-		frame.getContentPane().add(rdbtnTreeset);
-		
-		JRadioButton rdbtnLinkedhashset = new JRadioButton("LinkedHashSet");
-		rdbtnLinkedhashset.setBounds(157, 167, 109, 23);
-		frame.getContentPane().add(rdbtnLinkedhashset);
-		
-		JButton btnNuevaImplementacion = new JButton("Nueva implementacion");
-		btnNuevaImplementacion.setBounds(164, 227, 139, 23);
-		frame.getContentPane().add(btnNuevaImplementacion);
-		
-		JTextArea txtrRespuestaInciso = new JTextArea();
-		txtrRespuestaInciso.setText("Respuesta inciso 1");
-		txtrRespuestaInciso.setBounds(20, 285, 191, 22);
-		frame.getContentPane().add(txtrRespuestaInciso);
-		
-		JTextArea txtrRespuestaInciso_1 = new JTextArea();
-		txtrRespuestaInciso_1.setText("Respuesta inciso 2");
-		txtrRespuestaInciso_1.setBounds(20, 342, 191, 22);
-		frame.getContentPane().add(txtrRespuestaInciso_1);
-		
-		JTextArea txtrRespuestaInciso_2 = new JTextArea();
-		txtrRespuestaInciso_2.setText("Respuesta inciso 3");
-		txtrRespuestaInciso_2.setBounds(20, 397, 191, 22);
-		frame.getContentPane().add(txtrRespuestaInciso_2);
-		
-		JTextArea txtrRespuestaInciso_3 = new JTextArea();
-		txtrRespuestaInciso_3.setText("Respuesta inciso 4");
-		txtrRespuestaInciso_3.setBounds(20, 449, 191, 22);
-		frame.getContentPane().add(txtrRespuestaInciso_3);
-		
-		JTextArea txtrRespuestaInciso_4 = new JTextArea();
-		txtrRespuestaInciso_4.setText("Respuesta inciso 5");
-		txtrRespuestaInciso_4.setBounds(20, 504, 191, 22);
-		frame.getContentPane().add(txtrRespuestaInciso_4);
-		
-		JTextArea txtrRespuestaInciso_5 = new JTextArea();
-		txtrRespuestaInciso_5.setText("Respuesta inciso 6");
-		txtrRespuestaInciso_5.setBounds(20, 559, 191, 22);
-		frame.getContentPane().add(txtrRespuestaInciso_5);
-		
-		JTextArea txtrRespuestaInciso_6 = new JTextArea();
-		txtrRespuestaInciso_6.setText("Respuesta inciso 7");
-		txtrRespuestaInciso_6.setBounds(20, 610, 191, 22);
-		frame.getContentPane().add(txtrRespuestaInciso_6);
-		
+		rdbtnTreeset.setBounds(41, 274, 141, 23);
+		panel.add(rdbtnTreeset);
+
+		JRadioButton rdbtnLinkedHashset = new JRadioButton("Linked HashSet");
+		rdbtnLinkedHashset.setBounds(41, 299, 141, 23);
+		panel.add(rdbtnLinkedHashset);
+
+		JLabel lblCaractersticas = new JLabel("Características:");
+		lblCaractersticas.setBounds(21, 113, 109, 16);
+		panel.add(lblCaractersticas);
+
+		JLabel lblImplementacin = new JLabel("Implementación: ");
+		lblImplementacin.setBounds(21, 226, 109, 16);
+		panel.add(lblImplementacin);
+
 		JButton btnCalcular = new JButton("Calcular");
-		btnCalcular.setBounds(20, 661, 89, 23);
-		frame.getContentPane().add(btnCalcular);
+		btnCalcular.setBounds(67, 331, 117, 29);
+		panel.add(btnCalcular);
+
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(283, 6, 311, 366);
+		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+
+		JLabel lblResultado = new JLabel("Resultados");
+		lblResultado.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		lblResultado.setBounds(100, 22, 113, 16);
+		panel_1.add(lblResultado);
+
+		JLabel lblInterseccion = new JLabel("Con experiencia en los 3:");
+		lblInterseccion.setBounds(20, 59, 168, 16);
+		panel_1.add(lblInterseccion);
+
+		JLabel lblResInterseccion = new JLabel("");
+		lblResInterseccion.setBounds(30, 87, 249, 25);
+		panel_1.add(lblResInterseccion);
+
+		JLabel lblJava = new JLabel("Java pero no Android:");
+		lblJava.setBounds(20, 115, 168, 16);
+		panel_1.add(lblJava);
+
+		JLabel lblJavaNoAndroid = new JLabel("");
+		lblJavaNoAndroid.setBounds(30, 137, 249, 25);
+		panel_1.add(lblJavaNoAndroid);
+
+		JLabel lblIosYAndroid = new JLabel("IOS y Android, no Java:");
+		lblIosYAndroid.setBounds(20, 171, 168, 16);
+		panel_1.add(lblIosYAndroid);
+
+		JLabel lblIOSAndroid = new JLabel("");
+		lblIOSAndroid.setBounds(30, 193, 249, 25);
+		panel_1.add(lblIOSAndroid);
+
+		JLabel lblSubconjunto = new JLabel("Java subconjunto de Android: ");
+		lblSubconjunto.setBounds(20, 230, 212, 16);
+		panel_1.add(lblSubconjunto);
+
+		JLabel lblResSubconjunto = new JLabel("");
+		lblResSubconjunto.setBounds(30, 252, 249, 16);
+		panel_1.add(lblResSubconjunto);
+
+		JLabel lblMasDesarrolladores = new JLabel("Conjunto con más desarrolladores: ");
+		lblMasDesarrolladores.setBounds(20, 275, 168, 16);
+		panel_1.add(lblMasDesarrolladores);
+
+		JLabel lblMas = new JLabel("");
+		lblMas.setBounds(30, 297, 249, 25);
+		panel_1.add(lblMas);
 	}
 }

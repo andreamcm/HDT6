@@ -2,31 +2,31 @@
 import java.util.Set;
 import java.util.TreeSet;
 /**
- * @author josePablo y Andrea Cordón
+ * @author josePablo y Andrea Cordï¿½n
  * @version 1.0
  * @since 12-03-2017
- * Implementación linkedhashSet de la interfaz Set
+ * Implementaciï¿½n linkedhashSet de la interfaz Set
  */
 
-public class treeSet implements Iset<Desarrollador>{
-	
+public class treeSet<E> implements Iset<Desarrollador>{
+
 	/**
 	 * Atributos de la clase treeSet
 	 */
 	private TreeSet<Desarrollador> desarrolladoresTree;
-	
+
 	/**
 	 * Constructor de la calse treeSet
 	 */
 	public treeSet(){
 		desarrolladoresTree = new TreeSet<Desarrollador>();
 	}
-	
+
 	public Set<Desarrollador> getDesarroladoresTree(){
 		return desarrolladoresTree;
 	}
-	
-	
+
+
 	@Override
 	public boolean Agregar(Desarrollador desa) {
 		if((desarrolladoresTree).add(desa)==true)
@@ -52,7 +52,7 @@ public class treeSet implements Iset<Desarrollador>{
 			return false;
 	}
 
-	
+
 	@Override
 	public boolean quitar(Object o) {
 		if (( desarrolladoresTree).remove(o)==true)
@@ -60,5 +60,5 @@ public class treeSet implements Iset<Desarrollador>{
 		else
 			return false;
 	}
-	
+
 }

@@ -1,22 +1,25 @@
-//Importes
+//Importamos Set de las clases de java y HashSet una implementaciï¿½n.
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @author josePablo y Andrea Cordo
+ * @author josePablo y Andrea Cordon
  * @version 1.0
  * @since 12-03-2017
- * Implementación hashSet de la interfaz Set
+ * Implementaciï¿½n hashSet de la interfaz Set
  */
 
 
-public class hashSet implements Iset<Desarrollador> {
+public class hashSet<Desarrollador> implements Iset<Desarrollador> {
 	/**
 	 * Atributos de la clase hashSet
 	 */
-	
-	private HashSet<Desarrollador> desarrolladores;
-	
+
+	Set<Desarrollador> desarrolladorJava;
+	Set<Desarrollador> desarrolladorIOS;
+	Set<Desarrollador> desarrolladorAndroid;
+	Set valores;
+
 	/**
 	 * Constructor de la clase hashSet
 	 */
@@ -24,43 +27,73 @@ public class hashSet implements Iset<Desarrollador> {
 		desarrolladores = new HashSet<Desarrollador>();
 	}
 
-	
-	
-	public Set<Desarrollador> getDesarroladores(){
-		return desarrolladores;
+	public void setValores (Set val){
+		this.valores = val;
 	}
 
 
 	@Override
 	public boolean Agregar(Desarrollador desa) {
-		if(desarrolladores.add(desa)==true)
+		if(desarrolladoresJava.add(desa)==true)
 			return true;
 		else
 			return false;
+			if (desarrolladorIOS.add(desa)==true)
+				return true;
+			else
+				return false;
+				if (desarrolladorAndroid.add(desa)==true)
+					return true;
+				else
+					return false;
 	}
 
 	@Override
-	public boolean contiene(Desarrollador desarrollador) {
-		if(desarrolladores.contains(desarrollador)==true)
+	public boolean contiene(Desarrollador desarrolador) {
+		if(desarrolladorJava.contains(desarrolador)==true)
 			return true;
 		else
-			return false;
+				return false;
+			if(desarrolladorIOS.contains(desarrolador)==true)
+				return true;
+			else
+				return false;
+				if(desarrolladorAndroid.contains(desarrolador)==true)
+					return true;
+				else
+					return false;
 	}
 
 	@Override
-	public boolean contieneTodos(Set<Desarrollador> valores) {
-		if (desarrolladores.containsAll(valores)==true)
+	public boolean contieneTodos(Set valores) {
+		if (desarrolladorJava.containsAll(valores)==true)
 			return true;
 		else
 			return false;
+			if (desarrolladorIOS.containsAll(valores)==true)
+				return true;
+			else
+				return false;
+				if(desarrolladorAndroid.containsAll(valores)==true)
+					return true;
+				else
+					return false;
 	}
 
 	@Override
 	public boolean quitar(Object o) {
-		if (desarrolladores.remove(o)==true)
+		if (desarrolladorJava.remove(o)==true)
 			return true;
 		else
 			return false;
+			if(desarrolladorIOS.remove(o)==true)
+				return true;
+			else
+				return false;
+				if(desarrolladorAndroid.remove(o)==true)
+					return true;
+				else
+					return false;
 	}
 
 }
