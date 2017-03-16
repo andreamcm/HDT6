@@ -1,5 +1,7 @@
 //Importamos Set de las clases de java y HashSet una implementaci�n.
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -10,27 +12,18 @@ import java.util.Set;
  */
 
 
-public class hashSet<E> implements Iset<Desarrollador> {
+public class hashSet implements Iset<Desarrollador>,Set {
 	/**
 	 * Atributos de la clase hashSet
 	 */
 
 	Set<Desarrollador> desarrolladorJava;
-	Set<Desarrollador> desarrolladorIOS;
-	Set<Desarrollador> desarrolladorAndroid;
-	Set valores;
 
 	/**
 	 * Constructor de la clase hashSet
 	 */
 	public hashSet(){
 		desarrolladorJava = new HashSet<Desarrollador>();
-		desarrolladorIOS = new HashSet<Desarrollador>();
-		desarrolladorAndroid = new HashSet<Desarrollador>();
-	}
-
-	public void setValores (Set val){
-		this.valores = val;
 	}
 
 
@@ -68,8 +61,102 @@ public class hashSet<E> implements Iset<Desarrollador> {
 			return false;
 	}
 
+
 	@Override
+	public boolean add(Object e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean addAll(Collection c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public boolean contains(Object o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean containsAll(Collection c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public Iterator iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public boolean remove(Object o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean removeAll(Collection c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean retainAll(Collection c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public Object[] toArray() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Object[] toArray(Object[] a) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	
 	public java.util.Iterator<String> Iterator() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+}

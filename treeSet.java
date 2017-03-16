@@ -8,7 +8,7 @@ import java.util.TreeSet;
  * Implementaci�n linkedhashSet de la interfaz Set
  */
 
-public class treeSet<E> implements Iset<Desarrollador>{
+public class treeSet implements Iset<Desarrollador>{
 
 	/**
 	 * Atributos de la clase treeSet
@@ -60,11 +60,13 @@ public class treeSet<E> implements Iset<Desarrollador>{
 		return false;
 	}
 
+
 	@Override
 	public java.util.Iterator<String> Iterator() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 
 

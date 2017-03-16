@@ -1,18 +1,21 @@
+import java.util.ArrayList;
+
+
 /**
  * @author josePablo y Andrea Cordon
  * @version 1.0
  * @since 12-03-2017
  * Clase que define a un desarrolador
  */
-public class Desarrollador<E> {
+public class Desarrollador {
 	/**
 	 * Atributos de la clase desarrollador
 	 */
 
 	private String nombre;
-	private String plataforma;
+	private ArrayList<String> plataforma;
 
-	public Desarrollador(String nombre, String plataforma){
+	public Desarrollador(String nombre, ArrayList<String> plataforma){
 		this.nombre = nombre;
 		this.plataforma = plataforma;
 
@@ -35,14 +38,14 @@ public class Desarrollador<E> {
 	/**
 	 * @return plataforma
 	 */
-	public String getPlataforma() {
+	public ArrayList<String> getPlataforma() {
 		return plataforma;
 	}
 
 	/**
 	 * @param plataforma
 	 */
-	public void setPlataforma(String plataforma) {
+	public void setPlataforma(ArrayList<String> plataforma) {
 		this.plataforma = plataforma;
 	}
 

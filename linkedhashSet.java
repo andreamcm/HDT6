@@ -9,7 +9,7 @@ import java.util.Set;
  * Implementaci�n linkedhashSet de la interfaz Set
  */
 
-public class linkedhashSet<E> implements Iset<Desarrollador>{
+public class linkedhashSet implements Iset<Desarrollador>{
 
 	/**
 	 * Atributos de la clase linkedhashSet
@@ -63,11 +63,13 @@ public class linkedhashSet<E> implements Iset<Desarrollador>{
 	}
 
 
-	@Override
+	//@Override
+	
 	public java.util.Iterator<String> Iterator() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 
 }
