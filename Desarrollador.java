@@ -14,6 +14,11 @@ public class Desarrollador {
 
 	private String nombre;
 	private ArrayList<String> plataforma;
+	
+	public Desarrollador(){
+		nombre = "";
+		plataforma = null;
+	}
 
 	public Desarrollador(String nombre, ArrayList<String> plataforma){
 		this.nombre = nombre;

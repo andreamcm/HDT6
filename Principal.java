@@ -5,12 +5,12 @@ import java.util.Iterator;
 
 public class Principal {
 	
-	private static Iset<Desarrollador>  setJava;
+	private static Set<String> setJava;
 	private static Desarrollador desarrollador;
 	private static ArrayList<String> capacidadesDesa = new ArrayList<String>();
-	private static Iset<Desarrollador>  setIOS;
-	private static Iset<Desarrollador> setAndroid;
-	private static Controlador control = new Controlador();
+	private static Set<String> setIOS;
+	private static Set<String> setAndroid;
+	
 	public static void main(String[] args) {
 
 		Scanner teclado = new Scanner(System.in);
@@ -33,6 +33,10 @@ public class Principal {
 		System.out.println("¿A cuántos desarrolladores desea agregar?: ");
 		int cantidad = teclado.nextInt();
 
+		/**
+		 * Existe un error que no pudimos debuggear donde al ingresar m�s de un desarrollador 
+		 * al ingresar el segundo nombre debe escribirse dos veces
+		 */
 		while (cantidad != 0){
 		System.out.println("Ingrese el nombre del desarrollador al que desea agregar: ");
 		teclado.nextLine();
@@ -46,24 +50,26 @@ public class Principal {
 		if(especialidad==1){
 			capacidadesDesa.add("Java");
 			desarrollador = new Desarrollador(nombre,capacidadesDesa);
-			setJava.Agregar(desarrollador);
+			setJava.add(desarrollador.getNombre());
 		}
 		else if (especialidad ==2){
 			capacidadesDesa.add("IOS");
 			desarrollador = new Desarrollador(nombre,capacidadesDesa);
-			setIOS.Agregar(desarrollador);
+			setIOS.add(desarrollador.getNombre());
 		}
 		else{
 			capacidadesDesa.add("Android");
 			desarrollador = new Desarrollador(nombre,capacidadesDesa);
-			setAndroid.Agregar(desarrollador);
+			setAndroid.add(desarrollador.getNombre());
 		}
 		
 		System.out.println("¿Desea agregar otra especialidad a este desarrollador?: ");
 		teclado.nextLine();
 		String respuesta = teclado.nextLine();
+		int cont = 0;
 		
-		while (respuesta.equals("si")){
+		while (respuesta.equals("si") && cont < 2){
+			cont++;
 			System.out.println("¿En qué se especializa este desarrollador?: ");
 			System.out.println("1. Java");
 			System.out.println("2. IOS");
@@ -73,51 +79,70 @@ public class Principal {
 			if(especialidad==1){
 				capacidadesDesa.add("Java");
 				desarrollador = new Desarrollador(nombre,capacidadesDesa);
-				setJava.Agregar(desarrollador);
+				setJava.add(desarrollador.getNombre());
 			}
 			else if (especialidad ==2){
 				capacidadesDesa.add("IOS");
 				desarrollador = new Desarrollador(nombre,capacidadesDesa);
-				setIOS.Agregar(desarrollador);
+				setIOS.add(desarrollador.getNombre());
 			}
 			else{
 				capacidadesDesa.add("Android");
 				desarrollador = new Desarrollador(nombre,capacidadesDesa);
-				setAndroid.Agregar(desarrollador);
+				setAndroid.add(desarrollador.getNombre());
 			}
 			
 			System.out.println("¿Desea agregar otra especialidad a este desarrollador?: ");
 			teclado.nextLine();
 			respuesta = teclado.nextLine();
+			if (cont == 2)
+				System.out.println("Ya no hay mas plataformas para asignarle al desarrollador");
 		}
 		
 		cantidad--;
 		}
 		
-		Object respu = control.relacionTres(setJava, setIOS, setAndroid);
-		System.out.print(respu);
-
-	}
-	
-
-			
-	
+		
+		if(setJava.containsAll(setAndroid)&& setAndroid.containsAll(setIOS)){
+			if (setJava.contains("juan")==true){
+				System.out.println("YEAHH");
+			}
+			System.out.print("Desarrolladores que comparten las tres plataformas");
+			Iterator<String> respu = setJava.iterator();
+			while(respu.hasNext()){
+				System.out.println("\n" + respu.next()+"\n" );
+			}
+		}
+		/**
+		System.out.print("Desarrolladores que comparten las tres plataformas");
+		interseccion();
+		System.out.print(" Funcion para mostrar a los que son de Java, pero no de Android.");
+		jNa();
+		System.out.print("Funcion para mostrar los que son de Android e IOS, pero no de Java");
+		iosNj();
+		*/
+		
+		
 	}
 
 		// Funcion para mostrar la interseccion entre los tres conjuntos.
 	
-		/**
-		public void interseccion(){
-			Iterator<String> iterator1 = setJava.Iterator();
+		
+		public static void interseccion(){
+			int cont = 1;
+			Iterator<String> iterator1 = setJava.iterator();
 			while(iterator1.hasNext()){
-				Object elementos1 = iterator1.hasNext();
-				Iterator<String> iterator2 = setIOS.Iterator();
+				cont = cont - 1;
+				String elementos1 = iterator1.next();
+				Iterator<String> iterator2 = setIOS.iterator();
 				while(iterator2.hasNext()){
-					Object elementos2 = iterator2.hasNext();
+					String elementos2 = iterator2.next();
 					if (elementos1.equals(elementos2)){
-					Iterator<String> iterator3 = setAndroid.Iterator();
-					while (iterator3.hasNext()){
-						Object elementos3 = iterator3.hasNext();
+					Iterator<String> iterator3 = setAndroid.iterator();
+					while (iterator3.hasNext() && cont == 0){
+						String elementos3 = iterator3.next();
+						setAndroid.remove(elementos3);
+						cont++;
 						if (elementos1.equals(elementos3)){
 							System.out.print(elementos1);
 
@@ -133,11 +158,11 @@ public class Principal {
 			
 
 		// Funcion para mostrar a los que son de Java, pero no de Android.
-		public void javaNAndroid(){
-			Iterator<String> iterator1 = setJava.Iterator();
+		public static void jNa(){
+			Iterator<String> iterator1 = setJava.iterator();
 			while(iterator1.hasNext()){
-				Object elementos1 = iterator1.hasNext();
-				Iterator<String> iterator2 = setAndroid.Iterator();
+				Object elementos1 = iterator1.next();
+				Iterator<String> iterator2 = setAndroid.iterator();
 				boolean existe = false;
 				while(iterator2.hasNext()){
 					Object elementos2 = iterator2.next();
@@ -152,16 +177,16 @@ public class Principal {
 		}
 
 		// Funcion para mostrar los que son de Android e IOS, pero no de Java
-		public void androidIOSNJava(){
-			Iterator<String> iterator1 = setIOS.Iterator();
+		public static void iosNj(){
+			Iterator<String> iterator1 = setIOS.iterator();
 			while(iterator1.hasNext()){
 				Object elementos1 = iterator1.next();
-				Iterator<String> iterator2 = setAndroid.Iterator();
+				Iterator<String> iterator2 = setAndroid.iterator();
 				while(iterator2.hasNext()){
 					Object elementos2 = iterator2.next();
 					if (elementos1.equals(elementos2)){
 						boolean existe = false;
-						Iterator<String> iterator3 = setJava.Iterator();
+						Iterator<String> iterator3 = setJava.iterator();
 						while(iterator3.hasNext()){
 							Object elementos3 = iterator3.next();
 							if(elementos1.equals(elementos3)){
@@ -184,4 +209,4 @@ public class Principal {
 
 
 }
-*/
+
