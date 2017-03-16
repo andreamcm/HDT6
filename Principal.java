@@ -111,63 +111,63 @@ public class Principal {
 			}
 		}
 		
+		Iterator<String> iterat = setJava.iterator();
+		while(iterat.hasNext()){
+			String elem = iterat.next();
+			if(setAndroid.contains(elem)){
+			}else
+				System.out.println("\n"+"Desarrolladores que son de java pero no de android"+ elem+"\n");
+		}
 		
 
-		
-		
-	}
-
-			
-
-		// Funcion para mostrar a los que son de Java, pero no de Android.
-		public static void jNa(){
-			Iterator<String> iterator1 = setJava.iterator();
-			while(iterator1.hasNext()){
-				Object elementos1 = iterator1.next();
-				Iterator<String> iterator2 = setAndroid.iterator();
-				boolean existe = false;
-				while(iterator2.hasNext()){
-					Object elementos2 = iterator2.next();
-					if(elementos1.equals(elementos2)){
-						existe = true;
-					}
-					if(!existe){
-						System.out.println(existe);
-					}
-					}
+		Iterator<String> iterator = setIOS.iterator();
+		while(iterator.hasNext()){
+			String elemento = iterator.next();
+			if(setAndroid.contains(elemento)){
+				if (setJava.contains(elemento)){
+			}else
+				System.out.println("\n"+"Desarrolladores que son de iOS y Android pero no de java"+ elemento+"\n");	
 			}
 		}
-
-		// Funcion para mostrar los que son de Android e IOS, pero no de Java
-		public static void iosNj(){
-			Iterator<String> iterator1 = setIOS.iterator();
-			while(iterator1.hasNext()){
-				Object elementos1 = iterator1.next();
-				Iterator<String> iterator2 = setAndroid.iterator();
-				while(iterator2.hasNext()){
-					Object elementos2 = iterator2.next();
-					if (elementos1.equals(elementos2)){
-						boolean existe = false;
-						Iterator<String> iterator3 = setJava.iterator();
-						while(iterator3.hasNext()){
-							Object elementos3 = iterator3.next();
-							if(elementos1.equals(elementos3)){
-								existe = true;
-							}
-							if (!existe){
-								System.out.print(elementos1);
-							}
-						}
-					}
-				}
+		
+		
+		if(setAndroid.contains(setJava)){
+			System.out.print("\n"+ "Desarrolladores de java son subconjunto de desarrolladores Android"+"\n");
+				
 			}
-
+		System.out.println("\n" + "La plataforma con mas desarrolladores es :" +"\n");
+		 if(setJava.size() > setIOS.size())
+	           if(setJava.size()>setAndroid.size()){
+	              System.out.println("El mayor grupo son desarrolladores Java");
+				  Iterator<String> respu = setJava.iterator();
+				  while(respu.hasNext()){
+					  System.out.println("\n" + respu.next()+"\n" );
+				  }
+	           }
+	           else{
+	              System.out.println("el mayor es desarrolladores Android ");
+				  Iterator<String> respu = setAndroid.iterator();
+				  while(respu.hasNext()){
+					  System.out.println("\n" + respu.next()+"\n" );
+				  }	              
+	           }
+	        else if(setIOS.size()>setAndroid.size()){
+	              System.out.println("el mayor es desarrolladores iOS");
+				  Iterator<String> respu = setIOS.iterator();
+				  while(respu.hasNext()){
+					  System.out.println("\n" + respu.next()+"\n" );
+				  }
+	        }
+	                else{
+	              System.out.println("el mayor es el conjunto de desarrolladores Android");
+				  Iterator<String> respu = setJava.iterator();
+				  while(respu.hasNext()){
+					  System.out.println("\n" + respu.next()+"\n" );
+				  }
+	                }
+	    
 		}
 
-		// Funcion para mostrar si el conjunto de Java es subconjunto de Android
-		public void JavaSubAndroid(){
-
-		}
 
 
 }
