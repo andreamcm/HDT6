@@ -104,57 +104,19 @@ public class Principal {
 		
 		
 		if(setJava.containsAll(setAndroid)&& setAndroid.containsAll(setIOS)){
-			if (setJava.contains("juan")==true){
-				System.out.println("YEAHH");
-			}
 			System.out.print("Desarrolladores que comparten las tres plataformas");
 			Iterator<String> respu = setJava.iterator();
 			while(respu.hasNext()){
 				System.out.println("\n" + respu.next()+"\n" );
 			}
 		}
-		/**
-		System.out.print("Desarrolladores que comparten las tres plataformas");
-		interseccion();
-		System.out.print(" Funcion para mostrar a los que son de Java, pero no de Android.");
-		jNa();
-		System.out.print("Funcion para mostrar los que son de Android e IOS, pero no de Java");
-		iosNj();
-		*/
+		
+		
+
 		
 		
 	}
 
-		// Funcion para mostrar la interseccion entre los tres conjuntos.
-	
-		
-		public static void interseccion(){
-			int cont = 1;
-			Iterator<String> iterator1 = setJava.iterator();
-			while(iterator1.hasNext()){
-				cont = cont - 1;
-				String elementos1 = iterator1.next();
-				Iterator<String> iterator2 = setIOS.iterator();
-				while(iterator2.hasNext()){
-					String elementos2 = iterator2.next();
-					if (elementos1.equals(elementos2)){
-					Iterator<String> iterator3 = setAndroid.iterator();
-					while (iterator3.hasNext() && cont == 0){
-						String elementos3 = iterator3.next();
-						setAndroid.remove(elementos3);
-						cont++;
-						if (elementos1.equals(elementos3)){
-							System.out.print(elementos1);
-
-						}
-					}
-
-					}
-
-				}
-				}
-			}
-			
 			
 
 		// Funcion para mostrar a los que son de Java, pero no de Android.
