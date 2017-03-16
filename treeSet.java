@@ -13,7 +13,7 @@ public class treeSet<E> implements Iset<Desarrollador>{
 	/**
 	 * Atributos de la clase treeSet
 	 */
-	private TreeSet<Desarrollador> desarrolladoresTree;
+	 Set<Desarrollador> desarrolladoresTree;
 
 	/**
 	 * Constructor de la calse treeSet
@@ -44,13 +44,6 @@ public class treeSet<E> implements Iset<Desarrollador>{
 	}
 
 
-	@Override
-	public boolean contieneTodos( Set<Desarrollador> valores) {
-		if (( desarrolladoresTree).containsAll(valores)==true)
-			return true;
-		else
-			return false;
-	}
 
 
 	@Override
@@ -60,5 +53,20 @@ public class treeSet<E> implements Iset<Desarrollador>{
 		else
 			return false;
 	}
+
+	@Override
+	public boolean contieneTodos(Set valores) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public java.util.Iterator<String> Iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
 
 }

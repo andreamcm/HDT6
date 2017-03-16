@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.Set;
 /**
  * Interfaz de los m�todos a implementar
@@ -19,4 +20,6 @@ public interface Iset<E> {
 
 	public boolean quitar(Object o);
 	//Quita una instacia del elemento especificado de la coleccion;
+
+	public Iterator<String> Iterator();
 }

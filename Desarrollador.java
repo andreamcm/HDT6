@@ -1,21 +1,21 @@
 /**
- * @author josePablo y Andrea Cordo
+ * @author josePablo y Andrea Cordon
  * @version 1.0
  * @since 12-03-2017
- * Clase que define a un desarrolador 
+ * Clase que define a un desarrolador
  */
-public class Desarrollador {
+public class Desarrollador<E> {
 	/**
 	 * Atributos de la clase desarrollador
 	 */
-	
-	private String nombre; 
-	private String plataforma; 
-	
+
+	private String nombre;
+	private String plataforma;
+
 	public Desarrollador(String nombre, String plataforma){
-		this.nombre = nombre; 
-		this.plataforma = plataforma; 
-	
+		this.nombre = nombre;
+		this.plataforma = plataforma;
+
 	}
 
 	/**
@@ -40,12 +40,12 @@ public class Desarrollador {
 	}
 
 	/**
-	 * @param plataforma 
+	 * @param plataforma
 	 */
 	public void setPlataforma(String plataforma) {
 		this.plataforma = plataforma;
 	}
-	
-	
+
+
 
 }

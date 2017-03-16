@@ -9,11 +9,11 @@ public class factorySet<E>{
 
 	public Iset<Desarrollador> getImplementacion(int n){
 		if(n==1)
-			return new hashSet();
+			return new hashSet<E>();
 		else if (n==2)
-			return new treeSet();
+			return new treeSet<E>();
 		else if (n==3)
-			return new linkedhashSet();
+			return new linkedhashSet<E>();
 		else
 		return null;
 	}

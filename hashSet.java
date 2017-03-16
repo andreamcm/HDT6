@@ -10,7 +10,7 @@ import java.util.Set;
  */
 
 
-public class hashSet<Desarrollador> implements Iset<Desarrollador> {
+public class hashSet<E> implements Iset<Desarrollador> {
 	/**
 	 * Atributos de la clase hashSet
 	 */
@@ -24,7 +24,9 @@ public class hashSet<Desarrollador> implements Iset<Desarrollador> {
 	 * Constructor de la clase hashSet
 	 */
 	public hashSet(){
-		desarrolladores = new HashSet<Desarrollador>();
+		desarrolladorJava = new HashSet<Desarrollador>();
+		desarrolladorIOS = new HashSet<Desarrollador>();
+		desarrolladorAndroid = new HashSet<Desarrollador>();
 	}
 
 	public void setValores (Set val){
@@ -34,18 +36,12 @@ public class hashSet<Desarrollador> implements Iset<Desarrollador> {
 
 	@Override
 	public boolean Agregar(Desarrollador desa) {
-		if(desarrolladoresJava.add(desa)==true)
+		if(desarrolladorJava.add(desa)==true)
 			return true;
 		else
 			return false;
-			if (desarrolladorIOS.add(desa)==true)
-				return true;
-			else
-				return false;
-				if (desarrolladorAndroid.add(desa)==true)
-					return true;
-				else
-					return false;
+
+
 	}
 
 	@Override
@@ -54,14 +50,6 @@ public class hashSet<Desarrollador> implements Iset<Desarrollador> {
 			return true;
 		else
 				return false;
-			if(desarrolladorIOS.contains(desarrolador)==true)
-				return true;
-			else
-				return false;
-				if(desarrolladorAndroid.contains(desarrolador)==true)
-					return true;
-				else
-					return false;
 	}
 
 	@Override
@@ -70,14 +58,6 @@ public class hashSet<Desarrollador> implements Iset<Desarrollador> {
 			return true;
 		else
 			return false;
-			if (desarrolladorIOS.containsAll(valores)==true)
-				return true;
-			else
-				return false;
-				if(desarrolladorAndroid.containsAll(valores)==true)
-					return true;
-				else
-					return false;
 	}
 
 	@Override
@@ -86,14 +66,10 @@ public class hashSet<Desarrollador> implements Iset<Desarrollador> {
 			return true;
 		else
 			return false;
-			if(desarrolladorIOS.remove(o)==true)
-				return true;
-			else
-				return false;
-				if(desarrolladorAndroid.remove(o)==true)
-					return true;
-				else
-					return false;
 	}
 
-}
+	@Override
+	public java.util.Iterator<String> Iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}

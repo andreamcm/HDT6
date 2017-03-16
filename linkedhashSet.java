@@ -3,19 +3,19 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
- * @author josePablo y Andrea Cordón
+ * @author josePablo y Andrea Cordï¿½n
  * @version 1.0
  * @since 12-03-2017
- * Implementación linkedhashSet de la interfaz Set
+ * Implementaciï¿½n linkedhashSet de la interfaz Set
  */
 
-public class linkedhashSet implements Iset<Desarrollador>{
-	
+public class linkedhashSet<E> implements Iset<Desarrollador>{
+
 	/**
 	 * Atributos de la clase linkedhashSet
 	 */
-	private LinkedHashSet<Desarrollador> desarrolladoresLink; 
-	
+	Set<Desarrollador> desarrolladoresLink;
+
 	/**
 	 * Constructor de la clase linkedhashSet
 	 */
@@ -23,7 +23,7 @@ public class linkedhashSet implements Iset<Desarrollador>{
 		desarrolladoresLink = new LinkedHashSet<Desarrollador>();
 	}
 
-	
+
 	public Set<Desarrollador> getDesarroladores(){
 		return desarrolladoresLink;
 	}
@@ -46,15 +46,7 @@ public class linkedhashSet implements Iset<Desarrollador>{
 	}
 
 
-	@Override
-	public boolean contieneTodos( Set<Desarrollador> valores) {
-		if (( desarrolladoresLink).containsAll(valores)==true)
-			return true;
-		else
-			return false;
-	}
 
-	
 	@Override
 	public boolean quitar(Object o) {
 		if (( desarrolladoresLink).remove(o)==true)
@@ -62,5 +54,20 @@ public class linkedhashSet implements Iset<Desarrollador>{
 		else
 			return false;
 	}
-	
+
+
+	@Override
+	public boolean contieneTodos(Set valores) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public java.util.Iterator<String> Iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }
